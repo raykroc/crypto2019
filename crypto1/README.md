@@ -16,5 +16,6 @@ Eksperyment przewidywania następnej liczby wygenerowanej przez glibc random().
 
 W ok. 75% przewidujemy dokładnie, w ok. 25% mylimy się o jeden bit.
 
+<br>
 
 Kornel Mirkowski
