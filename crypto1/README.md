@@ -1,6 +1,6 @@
 # crypto2019 lista 1
 
-Zad1d.java
+* Zad1d.java
 
 Eksperyment rozpoznawania LCG czy random.
 
@@ -8,8 +8,9 @@ W zależności od długości wejścia (zmienna int len).
 
 Przy len >= 10 pewność eksperymentu to prawie 100%
 
+<br>
 
-z2.c
+* z2.c
 
 Eksperyment przewidywania następnej liczby wygenerowanej przez glibc random().
 
