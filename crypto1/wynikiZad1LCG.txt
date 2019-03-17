@@ -1,0 +1,60 @@
+For 4 numbers:
+win rate: 50,2%. Wins 5017 out of 10000
+random  : 0,7% (37 / 5017)
+LCG     : 99,9% (4980 / 4983)
+
+For 5 numbers:
+win rate: 80,8%. Wins 8083 out of 10000
+random  : 62,2% (3146 / 5060)
+LCG     : 99,9% (4937 / 4940)
+
+For 6 numbers:
+win rate: 92,4%. Wins 9238 out of 10000
+random  : 84,8% (4237 / 4998)
+LCG     : 100,0% (5001 / 5002)
+
+For 7 numbers:
+win rate: 96,4%. Wins 9641 out of 10000
+random  : 92,8% (4658 / 5017)
+LCG     : 100,0% (4983 / 4983)
+
+For 8 numbers:
+win rate: 98,6%. Wins 9862 out of 10000
+random  : 97,3% (4979 / 5116)
+LCG     : 100,0% (4883 / 4884)
+
+For 9 numbers:
+win rate: 99,4%. Wins 9941 out of 10000
+random  : 98,8% (4978 / 5036)
+LCG     : 100,0% (4963 / 4964)
+
+For 10 numbers:
+win rate: 99,7%. Wins 9968 out of 10000
+random  : 99,4% (4895 / 4925)
+LCG     : 100,0% (5073 / 5075)
+
+For 11 numbers:
+win rate: 99,8%. Wins 9979 out of 10000
+random  : 99,6% (5065 / 5085)
+LCG     : 100,0% (4914 / 4915)
+
+For 12 numbers:
+win rate: 99,9%. Wins 9992 out of 10000
+random  : 99,9% (5049 / 5056)
+LCG     : 100,0% (4943 / 4944)
+
+For 13 numbers:
+win rate: 99,9%. Wins 9995 out of 10000
+random  : 99,9% (5097 / 5102)
+LCG     : 100,0% (4898 / 4898)
+
+For 14 numbers:
+win rate: 100,0%. Wins 9998 out of 10000
+random  : 100,0% (4925 / 4927)
+LCG     : 100,0% (5073 / 5073)
+
+For 15 numbers:
+win rate: 99,9%. Wins 9995 out of 10000
+random  : 99,9% (4992 / 4995)
+LCG     : 100,0% (5003 / 5005)
+
