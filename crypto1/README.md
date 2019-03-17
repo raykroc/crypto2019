@@ -6,7 +6,9 @@ Eksperyment rozpoznawania LCG czy random.
 
 W zależności od długości wejścia (zmienna int len).
 
-Przy len >= 10 pewność eksperymentu to prawie 100%
+Przy len >= 10 pewność eksperymentu to prawie 100%.
+
+Dokładne wyniki przedstawiono w pliku wynikiZad1LCG.txt. Rozponanie LCG jest niemal 100%, ale dla mniejszych długości (4, 5, 6) "losowe" wartości są często uznawane również za LCG. 
 
 <br>
 
