@@ -132,9 +132,8 @@ public class Zad1d {
 		return sr.nextInt(limit - 2) + 1;
 	}
 
-	private static void experiment() {
-		int times = 1000;
-		int len = 10;
+	private static void experiment(int len) {
+		int times = 10000;
 
 		int winsLcg = 0;
 		int winsRand = 0;
@@ -160,15 +159,19 @@ public class Zad1d {
 			}
 		}
 		int wins = winsRand + winsLcg;
+		System.out.println("For " + len + " numbers:");
 		System.out.printf("win rate: %.1f%%. Wins %d out of %d\n", (1f * wins / times * 100), wins, times);
-		System.out.printf("random  : %.1f%%. Wins %d out of %d\n", (1f * winsRand / rand * 100), winsRand, rand);
-		System.out.printf("LCG     : %.1f%%. Wins %d out of %d\n", (1f * winsLcg / lcg * 100), winsLcg, lcg);
+		System.out.printf("random  : %.1f%% (%d / %d)\n", (1f * winsRand / rand * 100), winsRand, rand);
+		System.out.printf("LCG     : %.1f%% (%d / %d)\n", (1f * winsLcg / lcg * 100), winsLcg, lcg);
+		System.out.println();
 		// System.out.println("win rate: " + (1f * wins / times * 100) + "%. Wins " + wins + " out of " + times);
 		// System.out.println("random : " + (1f * winsRand / rand * 100) + "%. Wins " + winsRand + " out of " + rand);
 		// System.out.println("LCG : " + (1f * winsLcg / lcg * 100) + "%. Wins " + winsLcg + " out of " + lcg);
 	}
 
 	public static void main(String[] args) {
-		experiment();
+		for (int len = 4; len < 16; len++) {
+			experiment(len);
+		}
 	}
 }
