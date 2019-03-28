@@ -1,0 +1,19 @@
+
+========= Summary results of SmallCrush =========
+
+ Version:          TestU01 1.2.3
+ Generator:        32-bit stdin
+ Number of statistics:  15
+ Total CPU time:   00:00:15.16
+ The following tests gave p-values outside [0.001, 0.9990]:
+ (eps  means a value < 1.0e-300):
+ (eps1 means a value < 1.0e-15):
+
+       Test                          p-value
+ ----------------------------------------------
+  6  MaxOft AD                      1 - 6.2e-10
+ ----------------------------------------------
+ All other tests were passed
+
+
+

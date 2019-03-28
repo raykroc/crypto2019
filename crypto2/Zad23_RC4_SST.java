@@ -1,10 +1,8 @@
 package crypto2;
 
-import java.util.Arrays;
-
 public class Zad23_RC4_SST {
 
-	private static Byte[] KSA_SST(int N, int T, Byte[] key) {
+	private static Byte[] KSA_SST(int N, Byte[] key) {
 		int L = key.length;
 		Byte S[] = new Byte[N];
 		Boolean marks[] = new Boolean[N];
@@ -44,10 +42,10 @@ public class Zad23_RC4_SST {
 		return S;
 	}
 
-	public static Byte[] RC4_SST(int N, int T, int L, int numOfBytes) {
+	public static void RC4_SSTmdrop(int N, int L, int D) {
 		Byte key[] = Common.newKey(L);
-		Byte S[] = KSA_SST(N, T, key);
-		return Common.PRGA(S, N, numOfBytes);
+		Byte S[] = KSA_SST(N, key);
+		Common.PRGAmdrop(S, N, D);
 	}
 
 	public static void main(String[] args) {
@@ -55,8 +53,8 @@ public class Zad23_RC4_SST {
 		int L = 40;// 40, 64, 128
 		int D = 0;// 0, 1, 2, 3
 
-		Byte x[] = Common.mdrop(RC4_SST(N, N, L, Common.num * (1 + D) + N), D);
-		System.out.println(Arrays.asList(x));
+		RC4_SSTmdrop(N, L, D);
+		// System.out.println(Arrays.asList(x));
 		// Common.writeToFile(x, "RC4_SST_N" + N + "_L" + L + "_D" + D);
 	}
 

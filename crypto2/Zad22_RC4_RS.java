@@ -1,7 +1,6 @@
 package crypto2;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Zad22_RC4_RS {
@@ -10,7 +9,7 @@ public class Zad22_RC4_RS {
 		int bajt = key[i / 8];
 		int bit = i % 8;
 		String binStr = String.format("%8s", Integer.toBinaryString(bajt & 0xFF)).replace(' ', '0');
-		return binStr.charAt(7 - bit);
+		return binStr.charAt(7 - bit); // albo samo (bit)
 	}
 
 	private static Byte[] KSA_RS(int N, int T, Byte[] key) {
@@ -40,19 +39,23 @@ public class Zad22_RC4_RS {
 		return S;
 	}
 
-	public static Byte[] RC4_RS(int N, int T, int L, int numOfBytes) {
+	public static void RC4_RSmdrop(int N, int T, int L, int D) {
 		Byte key[] = Common.newKey(L);
+		// Byte key[] = { 'W', 'i', 'k', 'i' };
 		Byte S[] = KSA_RS(N, T, key);
-		return Common.PRGA(S, N, numOfBytes);
+		Common.PRGAmdrop(S, N, D);
 	}
 
 	public static void main(String[] args) {
-		int N = 16;// 16, 64, 256
+		int N = 256;// 16, 64, 256
 		int L = 40;// 40, 64, 128
 		int D = 0;// 0, 1, 2, 3
 
-		Byte x[] = Common.mdrop(RC4_RS(N, N, L, Common.num * (1 + D) + N), D);
-		System.out.println(Arrays.asList(x));
+		RC4_RSmdrop(N, N, L, D);
+		// System.out.println(Arrays.asList(x));
+		// for (byte b : x) {
+		// System.out.printf("%02X ", b);
+		// }
 		// Common.writeToFile(x, "RC4_RS_N" + N + "_L" + L + "_D" + D);
 	}
 

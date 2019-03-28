@@ -1,7 +1,5 @@
 package crypto2;
 
-import java.util.Arrays;
-
 public class Zad21_RC4 {
 
 	private static Byte[] KSA(int N, int T, Byte[] key) {
@@ -23,20 +21,27 @@ public class Zad21_RC4 {
 		return S;
 	}
 
-	public static Byte[] RC4(int N, int T, int L, int numOfBytes) {
+	public static void RC4mdrop(int N, int T, int L, int D) {
 		Byte key[] = Common.newKey(L);
+		// Byte key[] = { 'K', 'e', 'y' };
 		Byte S[] = KSA(N, T, key);
-		return Common.PRGA(S, N, numOfBytes);
+		Common.PRGAmdrop(S, N, D);
 	}
 
 	public static void main(String[] args) {
-		int N = 256;// 16, 64, 256
+		long startTime = System.currentTimeMillis();
+		int N = 16;// 16, 64, 256
 		int L = 40;// 40, 64, 128
-		int D = 0;// 0, 1, 2, 3
+		int D = 2;// 0, 1, 2, 3
 
-		Byte x[] = Common.mdrop(RC4(N, N, L, Common.num * (1 + D) + N), D);
-		System.out.println(Arrays.asList(x));
+		RC4mdrop(N, N, L, D);
+		// System.out.println(Arrays.asList(x));
+		// for (byte b : x) {
+		// System.out.printf("%02X ", b);
+		// }
 		// Common.writeToFile(x, "RC4_N" + N + "_L" + L + "_D" + D);
+		long stopTime = System.currentTimeMillis();
+		System.err.println("Execution time: " + (stopTime - startTime));
 	}
 
 }
