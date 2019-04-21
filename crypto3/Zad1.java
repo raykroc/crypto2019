@@ -22,7 +22,7 @@ public class Zad1 {
 		byte[] doSomething(byte[] param1) throws GeneralSecurityException;
 	}
 
-	private static enum Algorithm {
+	static enum Algorithm {
 		CBC, OFB, ECB, CTR;
 
 		public String getString() {
@@ -56,7 +56,7 @@ public class Zad1 {
 		try {
 			getKey();
 			cipher = Cipher.getInstance(ALGORITHM.getString());
-			System.out.println(cipher.getAlgorithm());
+			// System.out.println(cipher.getAlgorithm());
 		} catch (IOException | GeneralSecurityException e) {
 			e.printStackTrace();
 		}
@@ -111,7 +111,11 @@ public class Zad1 {
 	}
 
 	static byte[] decrypt(byte[] cipherText) throws GeneralSecurityException {
-		cipher.init(Cipher.DECRYPT_MODE, secretKey, lastIvec());
+		AlgorithmParameterSpec params = null;
+		if (ALGORITHM.hasIvec()) {
+			params = lastIvec();
+		}
+		cipher.init(Cipher.DECRYPT_MODE, secretKey, params);
 		return cipher.doFinal(cipherText);
 	}
 
